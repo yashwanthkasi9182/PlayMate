@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface SkeletonLoaderProps {
   type: 'teams' | 'matches' | 'card';
@@ -8,7 +8,10 @@ interface SkeletonLoaderProps {
 }
 
 export default function SkeletonLoader({ type, count = 1 }: SkeletonLoaderProps) {
-  const skeletonVariants = {
+  const skeletonVariants: Variants = {
+    initial: {
+      opacity: 0.5
+    },
     pulse: {
       opacity: [0.5, 1, 0.5],
       transition: {
